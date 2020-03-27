@@ -25,7 +25,7 @@ public class Distinct {
     }
 }
 
-/***
+/**
  Write a function
 
  class Solution { public int solution(int[] A); }
