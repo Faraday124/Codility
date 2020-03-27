@@ -1,4 +1,4 @@
-package Lesson3;
+package lesson3;
 
 /**
  * Created by Iwo on 22.02.2018.
@@ -9,8 +9,8 @@ public class TapeEquilibrium {
         int result = Integer.MAX_VALUE;
         int temp = 0;
         int sum = 0;
-        for (int i = 0; i < A.length; i++) {
-            sum += A[i];
+        for (int value : A) {
+            sum += value;
         }
         for (int i = 0; i < A.length - 1; i++) {
             temp += A[i];

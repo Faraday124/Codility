@@ -1,4 +1,4 @@
-package Lesson4;
+package lesson4;
 
 import java.util.Arrays;
 
@@ -11,14 +11,13 @@ public class MaxCounters {
         int[] counters = new int[N];
         int currMax = 0;
         int currMin = 0;
-        for (int i = 0; i < A.length; i++) {
-            if (A[i]<=N) {
-                counters[A[i]-1] = Math.max(currMin, counters[A[i]-1]);
-                counters[A[i]-1]++;
-                currMax = Math.max(currMax, counters[A[i]-1]);
-            }
-            else if (A[i] == N+1) {
-                currMin= currMax;
+        for (int element : A) {
+            if (element <= N) {
+                counters[element - 1] = Math.max(currMin, counters[element - 1]);
+                counters[element - 1]++;
+                currMax = Math.max(currMax, counters[element - 1]);
+            } else if (element == N + 1) {
+                currMin = currMax;
             }
         }
 

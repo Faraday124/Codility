@@ -1,4 +1,4 @@
-package Lesson3;
+package lesson3;
 
 /**
  * Created by Iwo on 22.02.2018.
@@ -7,8 +7,8 @@ public class PermMissingElem {
 
     public int solution(int[] A) {
         int[] counters = new int[A.length+2];
-        for (int i = 0; i < A.length; i++) {
-            counters[A[i]] = 1;
+        for (int value : A) {
+            counters[value] = 1;
         }
         for (int i = 1; i < counters.length; i++) {
             if (counters[i] == 0)

@@ -1,4 +1,4 @@
-package Lesson2;
+package lesson2;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,9 +12,9 @@ public class OddOccurrencesInArray {
     public int solution(int[] A) {
 
         Map<Integer, Integer> counters = new HashMap<>();
-        for (int i = 0; i < A.length; i++) {
-            int value = counters.get(A[i]) == null ? 0 : counters.get(A[i]);
-            counters.put(A[i], ++value);
+        for (int item : A) {
+            int value = counters.get(item) == null ? 0 : counters.get(item);
+            counters.put(item, ++value);
         }
         Optional<Map.Entry<Integer, Integer>> result = counters.entrySet().stream().filter(i -> i.getValue() % 2 != 0).findAny();
         return result.isPresent() ? result.get().getKey() : -1;

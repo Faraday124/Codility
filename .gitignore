@@ -1,0 +1,14 @@
+.project
+.classpath
+.settings
+.springBeans
+.pmd
+.ruleset
+target/
+overlays/
+.idea/
+
+*.iml
+*.db
+*.rej
+*.conflict*

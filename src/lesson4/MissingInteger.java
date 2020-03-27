@@ -1,8 +1,5 @@
-package Lesson4;
+package lesson4;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /**
@@ -10,23 +7,26 @@ import java.util.stream.IntStream;
  */
 public class MissingInteger {
 
-    public static int solution(int[] A) {
-        List<Integer> numbers = IntStream.of(A)
-                .boxed()
+    public int solution(int[] A) {
+        int[] numbers = IntStream.of(A)
                 .filter(x -> x > 0)
-                .sorted()
                 .distinct()
-                .collect(Collectors.toList());
+                .sorted()
+                .toArray();
 
-        if (numbers.size() == 0) {
+        if (numbers.length == 0) {
             return 1;
         }
 
-        for (int i = 0; i < numbers.size(); i++) {
-            if (numbers.get(i) != i + 1)
+        if(numbers[numbers.length-1] == numbers.length){
+            return numbers.length + 1;
+        }
+
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] != i + 1)
                 return i + 1;
         }
-        return numbers.size() + 1;
+        return -1;
     }
 
     public static void main(String[] args) {

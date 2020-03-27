@@ -1,4 +1,4 @@
-package Lesson4;
+package lesson4;
 
 /**
  * Created by Iwo on 28.02.2018.
