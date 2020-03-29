@@ -1,6 +1,6 @@
 package lesson6
 
-fun solution(A: IntArray): Int {
+private fun solution(A: IntArray): Int {
 
     if (A.size < 3)
         return 0
