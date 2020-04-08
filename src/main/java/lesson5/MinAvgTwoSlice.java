@@ -2,6 +2,9 @@ package lesson5;
 
 public class MinAvgTwoSlice {
 
+    /**
+     * First iteration O(N**2) and score 60%
+     */
     public int solution(int[] A) {
 
         int minIndex = 0;
@@ -18,8 +21,42 @@ public class MinAvgTwoSlice {
                 }
             }
         }
+        return minIndex;
+    }
+
+    /**
+     * Optimized solution O(N*log(N)) and score 100%
+     */
+    public int solution2(int[] A) {
+
+        int minIndex = 0;
+        double minValue = Double.MAX_VALUE;
+
+        for (int i = 0; i < A.length - 1; i++) {
+
+            double sliceOfTwoAverage = (A[i] + A[i + 1]) / 2.0;
+
+            if (minValue > sliceOfTwoAverage) {
+                minIndex = i;
+                minValue = sliceOfTwoAverage;
+            }
+
+            if (i < A.length - 2 && minValue > (A[i] + A[i + 1] + A[i + 2]) / 3.0) {
+                minIndex = i;
+                minValue = (A[i] + A[i + 1] + A[i + 2]) / 3.0;
+            }
+        }
 
         return minIndex;
+    }
+
+    public static void main(String[] args) {
+        int[] A = new int[]{4, 2, 2, 5, 1, 5,8};
+
+        MinAvgTwoSlice m = new MinAvgTwoSlice();
+
+        System.out.println(m.solution(A));
+        System.out.println(m.solution2(A));
     }
 }
 
